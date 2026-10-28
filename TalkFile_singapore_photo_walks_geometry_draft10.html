@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#f5f2ec" name="theme-color"/><title>Singapore Photo Walks — HDB &amp; Shophouse Edition</title><style>
+:root{--paper:#f5f2ec;--ink:#1d2825;--muted:#68736e;--line:#d9ddd5;--accent:#d65b3f;--card:#fffefa;--dark:#20332e}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.52}a{color:inherit}
+.wrap{max-width:1120px;margin:auto;padding:0 18px}header{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.1em;font-weight:800}
+.hero{padding:34px 0 25px;display:grid;grid-template-columns:1.2fr .8fr;gap:25px;align-items:center}.kicker{font-size:11px;letter-spacing:.16em;font-weight:800;color:var(--accent)}h1{font-size:clamp(42px,7vw,72px);line-height:.96;letter-spacing:-.065em;margin:12px 0 16px}.intro{font-size:15px;color:#4d5a54;max-width:680px}.heroimg{width:100%;height:260px;object-fit:cover;border-radius:5px;background:#d7e1d9}.hero-error:after{content:"대표 사진을 불러오지 못했습니다. 장소별 사진 출처를 확인하세요.";display:flex;align-items:center;justify-content:center;min-height:220px;padding:18px;text-align:center;color:#56665d;background:#dce3dc}.pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}.pill{border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:11px}
+.section{padding:16px 0 25px}h2{font-size:clamp(25px,4vw,38px);letter-spacing:-.05em;line-height:1.05;margin:6px 0 8px}.sub{font-size:13px;color:var(--muted);max-width:700px}.filters{display:flex;flex-wrap:wrap;gap:7px;margin:17px 0}.filter{cursor:pointer;border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 12px;font-size:12px}.filter.active{background:var(--dark);border-color:var(--dark);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;min-width:0}.photo{height:260px;background:#dce3dc;position:relative;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover;display:block}.photo.img-error:before{content:"이미지를 불러오지 못했습니다. 아래 사진 출처 링크에서 원본을 확인하세요.";display:flex;align-items:center;justify-content:center;text-align:center;padding:25px;height:100%;font-size:13px;color:#56665d;background:linear-gradient(135deg,#dce3dc,#c4d0c7)}.num{position:absolute;left:13px;bottom:12px;color:white;text-shadow:0 1px 5px #000;font-size:11px;font-weight:800;letter-spacing:.12em}.body{padding:17px}.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}.tag{background:#e7ece5;color:#3e5748;border-radius:3px;padding:4px 7px;font-size:10px}h3{font-size:22px;line-height:1.13;letter-spacing:-.04em;margin:0 0 7px}p{margin:0 0 10px}.meta{font-size:12px;color:var(--muted)}.body>p:not(.meta){font-size:13px;color:#4b5751}.details{border-top:1px solid var(--line);padding-top:10px;display:grid;gap:9px}.details div{font-size:12px;color:#36443d}.details b{display:block;text-transform:uppercase;letter-spacing:.08em;font-size:10px;color:var(--muted);margin-bottom:2px}.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}.links a{font-size:11px;font-weight:750;text-decoration:none;color:#8f3e2b;border-bottom:1px solid var(--accent);padding-bottom:2px}
+.note{background:var(--dark);color:#fff;border-radius:6px;padding:20px;margin:18px 0 28px}.note p,.note li{font-size:12px;color:#d3ddd5}.note ul{padding-left:18px;margin-bottom:0}.sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.source{border:1px solid var(--line);padding:13px;background:#fffefa;font-size:12px}.source a{font-weight:750;text-decoration:none}.source p{color:var(--muted);margin:6px 0 0}footer{padding:20px 0 35px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}.hidden{display:none!important}
+@media(max-width:720px){.wrap{padding:0 14px}.hero{grid-template-columns:1fr;padding-top:25px;gap:15px}.heroimg{height:220px}.grid{grid-template-columns:1fr}.photo{height:245px}h1{font-size:49px}.sources{grid-template-columns:1fr}header{font-size:10px}}
+</style></head>
+<body><header class="wrap"><span>S/PW ● SINGAPORE PHOTO WALKS</span><span style="color:var(--muted);font-weight:500;letter-spacing:0">HDB + Shophouse + Geometry · 28 Oct 2026</span></header>
+<main class="wrap"><section class="hero"><div><div class="kicker">MONTHLY PHOTO CLUB FIELD GUIDE</div><h1>13 places.<br/>HDB, shophouses<br/>&amp; geometry.</h1><p class="intro">콘도는 제외하고, 독특한 HDB와 숍하우스를 중심으로 구성했습니다. 여기에 그림자와 반복 패턴이 강한 비주거 건축물 3곳을 더했습니다. 사진은 장소별 출처와 일치하도록 연결했고, 로딩 실패 시 다른 건물 사진으로 바꿔치기하지 않습니다.</p><div class="pills"><span class="pill">13 locations</span><span class="pill">HDB + shophouses</span><span class="pill">Geometric architecture</span><span class="pill">Public-space photography</span><span class="pill">1–2h walks</span></div></div><img alt="Tampines GreenOpal HDB facade and dome-shaped roof" class="heroimg" loading="eager" onerror="this.style.display='none';this.parentElement.classList.add('hero-error')" referrerpolicy="no-referrer" src="https://sg.tepcdn.com/public/usr/6b2vz9/5d2e71-01-Tampines-GreenOpal-Rhythmic-fac-ade-and-dome-shaped-roof-resized-.jpg"/></section>
+<section class="section"><div class="kicker">01 / CHOOSE YOUR REGION</div><h2>Look for shape, rhythm and texture.</h2><p class="sub">장소 자체의 건축 형태를 촬영하는 데 초점을 맞췄습니다. 지도 링크는 위치 검색으로 연결되며, 실제 촬영 전 접근 가능 구역과 보행 동선을 확인하세요.</p><div class="filters"><button class="filter active" data-filter="ALL">전체 13</button><button class="filter" data-filter="EAST">East · 동부</button><button class="filter" data-filter="WEST">West · 서부</button><button class="filter" data-filter="NORTH">North · 북부</button><button class="filter" data-filter="SOUTH">South · 남부</button><button class="filter" data-filter="CBD">Central · 도심</button></div><div class="grid"><article class="card" data-region="EAST">
+<div class="photo"><img alt="Tampines GreenOpal HDB distinctive facade and dome-shaped roof" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-error');" referrerpolicy="no-referrer" src="https://sg.tepcdn.com/public/usr/6b2vz9/5d2e71-01-Tampines-GreenOpal-Rhythmic-fac-ade-and-dome-shaped-roof-resized-.jpg"/><span class="num">01 / EAST</span></div>
+<div class="body">
+<div class="tags"><span class="tag">신형 HDB · 파사드 패턴</span><span class="tag">외부 공개 공간 기준</span></div>
+<h3>Tampines GreenOpal · Rhythmic Facades</h3>
+<p class="meta">Tampines GreenOpal, Tampines Avenue 8, Singapore</p>
+<p>돔형 지붕과 반복되는 파사드, 강한 수평선을 프레임에 담기 좋은 신형 공공주택 단지.</p>
+<div class="details">
+<div><b>추천 촬영 시간</b>오전 8:30–10:30 또는 오후 4:00–6:00</div>
+<div><b>촬영 아이디어</b>돔형 지붕을 파사드와 함께 담기, 반복되는 창과 차양의 리듬, 저층 보행로에서 수직선 강조</div>
+<div><b>도보 동선 · 1–2시간</b>단지 외곽 공개 보행로를 따라 45–60분. 출입이 제한된 주거 구역은 들어가지 않기</div>
+<div><b>추천 시기 / 조건</b>연중 가능. 비 온 뒤에는 색과 질감이 선명해질 수 있음.</div>
+<div><b>사진 확인</b>카드 사진은 해당 장소를 보여주는 출처 이미지입니다. 로딩 실패 시 다른 장소의 사진으로 대체하지 않습니다.</div>
+</div>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Tampines+GreenOpal,+Tampines+Avenue+8,+Singapore" rel="noopener noreferrer" target="_blank">Google Maps ↗</a><a href="https://www.edgeprop.sg/living/discover/through-lens-exploring-spatial-rhythms-new-hdb-projects" rel="noopener noreferrer" target="_blank">EdgeProp · Tampines GreenOpal photo essay ↗</a></div>
+</div>
+</article><article class="card" data-region="WEST">
+<div class="photo"><img alt="View upward from the courtyard formed by diamond-shaped HDB blocks at Yung Kuang Road" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-error');" referrerpolicy="no-referrer" src="https://www.mcrae.photos/_astro/03-63-yung-kuang-road-2.CJasxRub_Z2iTGKu.webp"/><span class="num">02 / WEST</span></div>
+<div class="body">
+<div class="tags"><span class="tag">구형 HDB · 기하학</span><span class="tag">외부 공개 공간 기준</span></div>
+<h3>Yung Kuang Road Diamond HDB · Diamond Courtyard</h3>
+<p class="meta">Blocks 63–66 Yung Kuang Road, Singapore</p>
+<p>1970년대 JTC가 지은 네 동이 다이아몬드 형태를 만드는 독특한 HDB. 중정에서 위를 올려다보는 구도가 대표적.</p>
+<div class="details">
+<div><b>추천 촬영 시간</b>오전 9:00–11:00 또는 해가 낮아지는 오후</div>
+<div><b>촬영 아이디어</b>중정에서 하늘을 향한 대칭 구도, 건물 사이의 음영, 광각으로 반복되는 발코니 선 강조</div>
+<div><b>도보 동선 · 1–2시간</b>공공 도로와 접근 가능한 공개 공간에서만 촬영. 내부 통로나 출입 제한 구역은 진입하지 않기</div>
+<div><b>추천 시기 / 조건</b>맑은 날은 대비가 강함. 흐린 날은 콘크리트 질감과 형태가 부드럽게 보임</div>
+<div><b>사진 확인</b>카드 사진은 해당 장소를 보여주는 출처 이미지입니다. 로딩 실패 시 다른 장소의 사진으로 대체하지 않습니다.</div>
+</div>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Blocks+63–66+Yung+Kuang+Road,+Singapore" rel="noopener noreferrer" target="_blank">Google Maps ↗</a><a href="https://www.mcrae.photos/journal/2024/11/5/chasing-lines-and-shapes-at-63-yung-kuang-road" rel="noopener noreferrer" target="_blank">The Straits Times · Diamond in the sky ↗</a></div>
+</div>
+</article><article class="card" data-region="WEST">
+<div class="photo"><img alt="Actual exterior photograph of the curved butterfly HDB block at 168A Queensway" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-error');" referrerpolicy="no-referrer" src="https://cassette.sphdigital.com.sg/image/homedecor/2c1238572d91dabd7f41c9729564794ee3bfcb8102a60ecce37750ac86facae2?q=85&amp;w=660"/><span class="num">03 / WEST</span></div>
+<div class="body">
+<div class="tags"><span class="tag">구형 HDB · 곡선</span><span class="tag">외부 공개 공간 기준</span></div>
+<h3>168A Queensway · Butterfly Block · Curved HDB Form</h3>
+<p class="meta">168A Queensway, Singapore 140168</p>
+<p>양쪽으로 휘어진 날개를 연상시키는 형태가 특징인 HDB. 직선 위주의 단지 사진과 다른 곡선 구도를 만들 수 있음.</p>
+<div class="details">
+<div><b>추천 촬영 시간</b>오전 9:00–11:00 또는 오후 3:30–5:30</div>
+<div><b>촬영 아이디어</b>건물 모서리에서 곡선이 드러나는 각도 찾기, 발코니의 반복, 전경의 나무를 프레임으로 활용</div>
+<div><b>도보 동선 · 1–2시간</b>외부 공개 보행로에서 촬영. 주거층 창문이나 주민을 망원으로 촬영하지 않기</div>
+<div><b>추천 시기 / 조건</b>연중. 측면광이 곡선을 잘 드러냄</div>
+<div><b>사진 확인</b>카드 사진은 해당 장소를 보여주는 출처 이미지입니다. 로딩 실패 시 다른 장소의 사진으로 대체하지 않습니다.</div>
+</div>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=168A+Queensway,+Singapore+140168" rel="noopener noreferrer" target="_blank">Google Maps ↗</a><a href="https://www.homeanddecor.com.sg/property/hdb/unique-hdb-blocks-singapore" rel="noopener noreferrer" target="_blank">Home &amp; Decor · Butterfly Block ↗</a></div>
+</div>
+</article><article class="card" data-region="NORTH">
+<div class="photo"><img alt="The Clover Block at 259 Ang Mo Kio Avenue 2, Singapore, with circular towers" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-error');" referrerpolicy="no-referrer" src="https://cassette.sphdigital.com.sg/image/homedecor/0138563ce9b1e25167300adaef65b3c7c55e5f0ff0d45811fbb0a18587432fa0?q=85&amp;w=660"/><span class="num">04 / NORTH</span></div>
+<div class="body">
+<div class="tags"><span class="tag">HDB 랜드마크 · 원형</span><span class="tag">외부 공개 공간 기준</span></div>
+<h3>The Clover Block · Circular HDB</h3>
+<p class="meta">259 Ang Mo Kio Avenue 2, Singapore 560259</p>
+<p>네 개의 원형 타워가 클로버 모양을 이루는 싱가포르의 독특한 HDB. 일반적인 직사각형 주거동과 다른 실루엣이 핵심.</p>
+<div class="details">
+<div><b>추천 촬영 시간</b>오전 8:30–10:30 또는 오후 4:00–6:00</div>
+<div><b>촬영 아이디어</b>원형 타워의 겹침, 아래에서 올려다본 곡선, 하늘과 흰 파사드의 대비</div>
+<div><b>도보 동선 · 1–2시간</b>외부 공개 보행로에서 촬영. 주민 전용 공간 및 내부 출입 금지</div>
+<div><b>추천 시기 / 조건</b>밝은 하늘이 실루엣을 분리해 줌. 정오에는 파사드 하이라이트 주의</div>
+<div><b>사진 확인</b>카드 사진은 해당 장소를 보여주는 출처 이미지입니다. 로딩 실패 시 다른 장소의 사진으로 대체하지 않습니다.</div>
+</div>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=259+Ang+Mo+Kio+Avenue+2,+Singapore+560259" rel="noopener noreferrer" target="_blank">Google Maps ↗</a><a href="https://www.roots.gov.sg/places/places-landing/Places/landmarks/ang-mo-kio-heritage-trail/block-259-the-clover-block" rel="noopener noreferrer" target="_blank">National Heritage Board · The Clover Block ↗</a></div>
+</div>
+</article><article class="card" data-region="NORTH">
+<div class="photo"><img alt="Historic photograph of the long curved HDB Block 34 at Whampoa West" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-error');" referrerpolicy="no-referrer" src="https://cassette.sphdigital.com.sg/image/homedecor/e8096215b3cb018ab0ebfc1a4c604e9a2e993c58bf88f1a8a908a4037bb6f56f?q=85&amp;w=640"/><span class="num">05 / NORTH</span></div>
+<div class="body">
+<div class="tags"><span class="tag">구형 HDB · 긴 곡선</span><span class="tag">외부 공개 공간 기준</span></div>
+<h3>Block 34 Whampoa West · The Banana Block</h3>
+<p class="meta">34 Whampoa West, Singapore 330034</p>
+<p>도로를 따라 길게 휘어진 외관 때문에 ‘바나나 블록’으로 불리는 HDB. 긴 선과 반복 창문을 이용한 그래픽한 사진에 적합.</p>
+<div class="details">
+<div><b>추천 촬영 시간</b>오전 8:30–10:30 또는 오후 4:00–5:30</div>
+<div><b>촬영 아이디어</b>긴 파사드를 비스듬히 압축, 창문 리듬, 곡선이 사라지는 원근감</div>
+<div><b>도보 동선 · 1–2시간</b>블록 주변 공공 보행로를 따라 30–45분. 주거동 안으로 들어가지 않기</div>
+<div><b>추천 시기 / 조건</b>부드러운 측면광 추천. 비가 오면 보행로가 미끄러울 수 있음</div>
+<div><b>사진 확인</b>카드 사진은 해당 장소를 보여주는 출처 이미지입니다. 로딩 실패 시 다른 장소의 사진으로 대체하지 않습니다.</div>
+</div>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=34+Whampoa+West,+Singapore+330034" rel="noopener noreferrer" target="_blank">Google Maps ↗</a><a href="https://www.homeanddecor.com.sg/property/hdb/unique-hdb-blocks-singapore" rel="noopener noreferrer" target="_blank">Home &amp; Decor · Banana Block ↗</a></div>
+</div>
+</article><article class="card" data-region="SOUTH">
+<div class="photo"><img alt="Street-level exterior of the horseshoe-shaped block at 78 Moh Guan Terrace, Tiong Bahru" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-error');" referrerpolicy="no-referrer" src="https://cassette.sphdigital.com.sg/image/homedecor/cb2bd241290f5d4719e05af86fd6190478850fdf778f61e662d3a0b23b4c09b0?q=85&amp;w=660"/><span class="num">06 / SOUTH</span></div>
+<div class="body">
+<div class="tags"><span class="tag">SIT/HDB 유산 · U자형</span><span class="tag">외부 공개 공간 기준</span></div>
+<h3>Block 78 Moh Guan Terrace · The Horse-Shoe Block</h3>
+<p class="meta">78 Moh Guan Terrace, Singapore 162078</p>
+<p>1939–1940년에 지어진 말발굽 모양의 초기 공공주택. 곡선 외벽과 역사적인 Tiong Bahru 거리 풍경을 함께 담기 좋음.</p>
+<div class="details">
+<div><b>추천 촬영 시간</b>오전 8:00–10:00. 카페와 주민 통행이 늘기 전 추천</div>
+<div><b>촬영 아이디어</b>곡선 복도와 외벽의 원근, 낮은 시점의 파사드, 주변 아르데코 주택과 함께 촬영</div>
+<div><b>도보 동선 · 1–2시간</b>Moh Guan Terrace와 Guan Chuan Street의 공개 도로를 따라 45–60분. 주민 생활을 방해하지 않기</div>
+<div><b>추천 시기 / 조건</b>연중. 흐린 날은 오래된 벽면 질감이 부드럽게 표현됨</div>
+<div><b>사진 확인</b>카드 사진은 해당 장소를 보여주는 출처 이미지입니다. 로딩 실패 시 다른 장소의 사진으로 대체하지 않습니다.</div>
+</div>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=78+Moh+Guan+Terrace,+Singapore+162078" rel="noopener noreferrer" target="_blank">Google Maps ↗</a><a href="https://www.roots.gov.sg/places/places-landing/Places/landmarks/tiong-bahru-heritage-trail/the-horse-shoe-block" rel="noopener noreferrer" target="_blank">National Heritage Board · The Horse-Shoe Block ↗</a></div>
+</div>
+</article><article class="card" data-region="SOUTH">
+<div class="photo"><img alt="Exterior of the early HDB blocks at Stirling Road" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-error');" referrerpolicy="no-referrer" src="https://cassette.sphdigital.com.sg/image/homedecor/4bdce19ec387aedb57b2b64fef6a51ad7a3fb956940da500e6a2a12d005b4db5?q=85&amp;w=660"/><span class="num">07 / SOUTH</span></div>
+<div class="body">
+<div class="tags"><span class="tag">초기 HDB · 역사적 주거</span><span class="tag">외부 공개 공간 기준</span></div>
+<h3>Blocks 45, 48 &amp; 49 Stirling Road · Early HDB Blocks</h3>
+<p class="meta">Blocks 45, 48 &amp; 49 Stirling Road, Singapore</p>
+<p>1960년에 완공된 초기 HDB 블록. 7층 규모의 단순한 매스와 주변의 오래된 주거 풍경을 현대 고층 주거와 대비해 촬영할 수 있음.</p>
+<div class="details">
+<div><b>추천 촬영 시간</b>오전 8:00–10:00 또는 오후 4:00–5:30</div>
+<div><b>촬영 아이디어</b>저층 블록과 뒤편 고층 건물의 대비, 계단식 반복, 골목과 주거의 스케일</div>
+<div><b>도보 동선 · 1–2시간</b>Stirling Road의 공개 보행로에서 45분 정도. 주민 출입구를 막지 않기</div>
+<div><b>추천 시기 / 조건</b>연중. 오후에는 입면에 비스듬히 빛이 들어올 때 추천</div>
+<div><b>사진 확인</b>카드 사진은 해당 장소를 보여주는 출처 이미지입니다. 로딩 실패 시 다른 장소의 사진으로 대체하지 않습니다.</div>
+</div>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Blocks+45,+48+&amp;+49+Stirling+Road,+Singapore" rel="noopener noreferrer" target="_blank">Google Maps ↗</a><a href="https://www.homeanddecor.com.sg/property/hdb/unique-hdb-blocks-singapore" rel="noopener noreferrer" target="_blank">Home &amp; Decor · First HDB blocks ↗</a></div>
+</div>
+</article><article class="card" data-region="CBD">
+<div class="photo"><img alt="Street-view photograph of the actual HDB block at 2 Kitchener Road" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-error');" referrerpolicy="no-referrer" src="https://cassette.sphdigital.com.sg/image/homedecor/48344347ab503ef816faa334d3a04640fb86059def24a92f553e9fb94118d0b7?q=85&amp;w=660"/><span class="num">08 / CENTRAL</span></div>
+<div class="body">
+<div class="tags"><span class="tag">구형 공공주택 · 아르데코</span><span class="tag">외부 공개 공간 기준</span></div>
+<h3>Block 2 Kitchener Road · Art Deco HDB</h3>
+<p class="meta">2 Kitchener Road, Singapore 200002</p>
+<p>Jalan Besar 인근의 초기 공공주택으로, 아르데코 요소와 상가가 이어지는 저층부가 특징. 오래된 거리와 도시 생활을 함께 담기 좋음.</p>
+<div class="details">
+<div><b>추천 촬영 시간</b>오전 8:00–10:00 또는 오후 4:00–6:00</div>
+<div><b>촬영 아이디어</b>수직 계단실과 창의 반복, 거리 레벨의 간판과 파사드, 나무 사이로 올려다보는 구도</div>
+<div><b>도보 동선 · 1–2시간</b>Kitchener Road와 인근 Maude Road를 잇는 45–60분 산책. 보도 위에서만 촬영</div>
+<div><b>추천 시기 / 조건</b>연중. 오전에는 거리 차량과 보행자 밀도가 비교적 낮음</div>
+<div><b>사진 확인</b>카드 사진은 해당 장소를 보여주는 출처 이미지입니다. 로딩 실패 시 다른 장소의 사진으로 대체하지 않습니다.</div>
+</div>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=2+Kitchener+Road,+Singapore+200002" rel="noopener noreferrer" target="_blank">Google Maps ↗</a><a href="https://www.nlb.gov.sg/main/image-detail?cmsuuid=cbed34c3-bd5f-4e84-80ec-45441aebbeff" rel="noopener noreferrer" target="_blank">National Library Board · Block 2 Kitchener Road ↗</a></div>
+</div>
+</article><article class="card" data-region="CBD">
+<div class="photo"><img alt="Actual shophouses along Tanjong Pagar Road, Singapore" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-error');" referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/1/13/Shophouses_along_Tanjong_Pagar_Road.jpg"/><span class="num">09 / CENTRAL</span></div>
+<div class="body">
+<div class="tags"><span class="tag">숍하우스 · 거리 건축</span><span class="tag">외부 공개 공간 기준</span></div>
+<h3>Tanjong Pagar Road Shophouses · Heritage Streetscape</h3>
+<p class="meta">Tanjong Pagar Road, Singapore</p>
+<p>보존된 숍하우스와 현대 고층 건물이 한 프레임에 들어오는 거리. 오래된 파사드의 장식과 도시의 대비를 함께 촬영할 수 있음.</p>
+<div class="details">
+<div><b>추천 촬영 시간</b>오전 8:00–10:00 또는 해질녘</div>
+<div><b>촬영 아이디어</b>아케이드와 파사드 반복, 오래된 지붕선 뒤의 고층 건물, 인물은 동의와 거리 확보 후 촬영</div>
+<div><b>도보 동선 · 1–2시간</b>Tanjong Pagar Road에서 주변 보존 거리로 60–90분. 상점 출입과 보행 흐름을 방해하지 않기</div>
+<div><b>추천 시기 / 조건</b>연중. 오전의 낮은 햇빛 또는 해질녘의 따뜻한 색감 추천</div>
+<div><b>사진 확인</b>카드 사진은 해당 장소를 보여주는 출처 이미지입니다. 로딩 실패 시 다른 장소의 사진으로 대체하지 않습니다.</div>
+</div>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Tanjong+Pagar+Road,+Singapore" rel="noopener noreferrer" target="_blank">Google Maps ↗</a><a href="https://commons.wikimedia.org/wiki/File:Shophouses_along_Tanjong_Pagar_Road.jpg" rel="noopener noreferrer" target="_blank">Wikimedia Commons · Tanjong Pagar Road shophouses · Deoma12 (CC BY-SA 4.0) ↗</a></div>
+</div>
+</article><article class="card" data-region="WEST">
+<div class="photo"><img alt="Eclipse, formerly Sandcrawler, with stepped glass wings and angular overhangs" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-error');" referrerpolicy="no-referrer" src="https://aedas-wps-hk-prd.oss-cn-hongkong.aliyuncs.com/media/2024/11/2-Sandcrawler_Singapore-PW.jpg"/><span class="num">10 / WEST</span></div>
+<div class="body">
+<div class="tags"><span class="tag">비주거 건축 · 계단형 매스</span><span class="tag">공개 정원 외부 촬영</span></div>
+<h3>Eclipse (Sandcrawler) · Stepped Shadows</h3>
+<p class="meta">1 Fusionopolis View, Singapore 138577</p>
+<p>V자형 오피스 건물의 층층이 밀려난 유리 파사드와 깊은 오버행이 만드는 선형 그림자가 포인트. 초록 정원과 차가운 유리의 대비도 좋음.</p>
+<div class="details">
+<div><b>추천 촬영 시간</b>오전 9:00–11:00 또는 오후 3:30–5:30</div>
+<div><b>촬영 아이디어</b>아래에서 오버행을 겹쳐 찍기, 수평 루버와 유리 반사, 식재와 건축의 프레임 대비</div>
+<div><b>도보 동선 · 1–2시간</b>Fusionopolis View 주변 보행로와 공개 정원 위주로 45–60분. 실내·입주사 구역은 출입 제한 준수</div>
+<div><b>추천 시기 / 조건</b>맑은 날 측면광이 구조감을 살림. 정오에는 그림자가 짧고 강해질 수 있음</div>
+<div><b>사진 확인</b>Aedas 공식 프로젝트 갤러리의 실제 건물 사진. 이미지 실패 시 대체 사진을 띄우지 않습니다.</div>
+</div>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Eclipse+Sandcrawler,+1+Fusionopolis+View,+Singapore" rel="noopener noreferrer" target="_blank">Google Maps ↗</a><a href="https://www.aedas.com/en/project/sandcrawler/" rel="noopener noreferrer" target="_blank">Aedas · Official project photos ↗</a><a href="https://www.ura.gov.sg/-/media/Corporate/Resources/Publications/Books/UD-Guidebook-2-_Green_and_Liveable_City_2024.pdf" rel="noopener noreferrer" target="_blank">URA · Public ground garden context ↗</a></div>
+</div>
+</article>
+<article class="card" data-region="CBD">
+<div class="photo"><img alt="Keppel South Central office facade with repeating curved fins and deep shadows" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-error');" referrerpolicy="no-referrer" src="https://images.squarespace-cdn.com/content/v1/5c6fadab840b16c60dc03298/1742284711977-GCD4C6OJUB00GDNQ8YR9/keppel%2Bsouth%2Bcentral-3.jpg"/><span class="num">11 / CENTRAL</span></div>
+<div class="body">
+<div class="tags"><span class="tag">상업 건축 · 반복 프레임</span><span class="tag">콘도 아님</span></div>
+<h3>Keppel South Central · Layered Frames</h3>
+<p class="meta">10 Hoe Chiang Road, Singapore 089315</p>
+<p>곡선형 외부 프레임이 유리 파사드 위로 반복되며, 빛이 비스듬히 들어올 때 프레임마다 짙은 그림자가 생기는 신축 오피스 건물.</p>
+<div class="details">
+<div><b>추천 촬영 시간</b>오후 3:00–5:30. 건물 면에 사광이 닿는 날을 노리기</div>
+<div><b>촬영 아이디어</b>프레임을 망원으로 압축, 곡선과 직선의 교차, 유리에 반사된 주변 건물과 그림자</div>
+<div><b>도보 동선 · 1–2시간</b>Hoe Chiang Road와 Tanjong Pagar Plaza 외곽을 연결해 45–75분. 로비·테라스 등 사유 공간은 허가 없이 진입하지 않기</div>
+<div><b>추천 시기 / 조건</b>맑은 오후에 입면의 음영이 선명함. 흐린 날은 프레임의 형태와 질감 위주</div>
+<div><b>사진 확인</b>사진작가 Gary McRae의 Keppel South Central 현장 촬영 이미지. 원본 출처를 카드에 표시했습니다.</div>
+</div>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Keppel+South+Central,+10+Hoe+Chiang+Road,+Singapore" rel="noopener noreferrer" target="_blank">Google Maps ↗</a><a href="https://www.mcrae.photos/journal/2025/3/18/a-sunday-stroll-through-tanjong-pagar-discovering-keppel-south-central" rel="noopener noreferrer" target="_blank">Gary McRae · Photo essay ↗</a><a href="https://www.keppel.com/realestate/sg/Work/Keppel-South-Central" rel="noopener noreferrer" target="_blank">Keppel · Building details ↗</a></div>
+</div>
+</article>
+<article class="card" data-region="CBD">
+<div class="photo"><img alt="TripleOne Somerset, formerly the Singapore Power Building, with stepped inverted-ziggurat facade" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-error');" referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Singapore_Power_Building_4%2C_Aug_07.JPG"/><span class="num">12 / CENTRAL</span></div>
+<div class="body">
+<div class="tags"><span class="tag">브루탈리즘 · 깊은 처마</span><span class="tag">비주거 오피스</span></div>
+<h3>TripleOne Somerset · Inverted Ziggurat</h3>
+<p class="meta">111 Somerset Road, Singapore 238164</p>
+<p>위층이 바깥으로 돌출되고 아래층은 안쪽으로 물러나는 역지구라트형 입면. 거대한 반복 수평선과 깊은 처마가 만드는 그림자가 매력적.</p>
+<div class="details">
+<div><b>추천 촬영 시간</b>오전 9:00–11:00 또는 오후 3:30–5:30</div>
+<div><b>촬영 아이디어</b>저층에서 위를 향한 대칭 구도, 돌출부 아래 검은 음영, 건물 모서리를 잘라 추상 패턴 만들기</div>
+<div><b>도보 동선 · 1–2시간</b>Somerset Road와 인근 공개 보행로에서 30–45분. 실내·업무 구역은 건물 규정 준수</div>
+<div><b>추천 시기 / 조건</b>햇빛이 옆에서 들어오는 맑은 날에 깊은 그림자가 선명함</div>
+<div><b>사진 확인</b>Wikimedia Commons의 실제 건물 사진. 링크에서 촬영자 및 사용 조건을 확인할 수 있습니다.</div>
+</div>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=TripleOne+Somerset,+111+Somerset+Road,+Singapore" rel="noopener noreferrer" target="_blank">Google Maps ↗</a><a href="https://commons.wikimedia.org/wiki/File:Singapore_Power_Building_4,_Aug_07.JPG" rel="noopener noreferrer" target="_blank">Wikimedia Commons · Photo source ↗</a><a href="https://www.campus.sg/golden-mile-complex-preserved-here-are-singapores-other-brutalist-icons-campus-sg/" rel="noopener noreferrer" target="_blank">Campus · Architecture notes ↗</a></div>
+</div>
+</article>
+<article class="card" data-region="WEST">
+<div class="photo"><img alt="Ayer Rajah Telephone Exchange, known as Singtel Tetris Building, with offset brutalist blocks" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-error');" referrerpolicy="no-referrer" src="https://i0.wp.com/assets.hardwarezone.com/img/2019/01/Singtel_Ayer_Rajah_Tower.jpg?ssl=1&amp;w=1068"/><span class="num">13 / WEST</span></div>
+<div class="body">
+<div class="tags"><span class="tag">브루탈리즘 · 블록형 매스</span><span class="tag">공공 도로에서만 촬영</span></div>
+<h3>Ayer Rajah Telephone Exchange · Singtel Tetris Building</h3>
+<p class="meta">1000 Dover Road, Singapore 139652</p>
+<p>불규칙한 높이와 방향으로 튀어나온 네 개의 매스가 테트리스 블록처럼 겹치는 1978년 통신 시설. 창이 거의 없는 단단한 외벽과 돌출부 아래로 생기는 깊은 그림자가 포인트야. <a href="https://www.campus.sg/golden-mile-complex-preserved-here-are-singapores-other-brutalist-icons-campus-sg/" rel="noopener noreferrer" target="_blank">건축 소개 ↗</a></p>
+<div class="details">
+<div><b>추천 촬영 시간</b>맑은 날 오전 9:00–11:00 또는 오후 3:30–5:30, 옆면에 빛이 들어올 때</div>
+<div><b>촬영 아이디어</b>돌출된 블록의 겹침, 흰색 타일과 검은 수평 띠, 하늘을 배경으로 한 실루엣과 강한 사선</div>
+<div><b>도보 동선 · 1–2시간</b>Dover Road의 공개 보행로에서 외관을 촬영하고 Singapore Polytechnic 주변 공개 동선과 연결. 통신 시설·캠퍼스 제한 구역에는 진입하지 않기</div>
+<div><b>추천 시기 / 조건</b>맑고 구름이 있는 날은 외벽의 입체감과 하늘의 대비가 잘 살아남. 정면광보다 사광 추천</div>
+<div><b>사진 확인</b>HardwareZone 기사에 실린 해당 건물 사진을 연결했어. 외부 서버에서 로딩이 실패하면 다른 건물 사진으로 대체하지 않아.</div>
+</div>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Ayer+Rajah+Telephone+Exchange,+1000+Dover+Road,+Singapore" rel="noopener noreferrer" target="_blank">Google Maps ↗</a><a href="https://www.hardwarezone.com.sg/mobile/telco/tech-news-singtel-ericsson-and-singapore-polytechnic-charge-ahead-open-singapore-s-first-live-5g-tes/" rel="noopener noreferrer" target="_blank">HardwareZone · Building photo source ↗</a><a href="https://www.campus.sg/golden-mile-complex-preserved-here-are-singapores-other-brutalist-icons-campus-sg/" rel="noopener noreferrer" target="_blank">Campus · Brutalist architecture notes ↗</a></div>
+</div>
+</article>
+</div></section>
+<section class="note"><strong>출사 전 체크</strong><ul><li>카드의 사진은 실제 장소와 일치하는 출처 이미지를 사용했습니다. 사진을 불러오지 못하면 다른 장소의 이미지로 대체하지 않고, 이미지 영역에 안내 문구가 나타납니다.</li><li>외부 공개 보행로 기준으로 구성했습니다. 주민 전용 공간, 건물 내부, 사유지에 무단으로 들어가지 마세요.</li><li>주거지 창문·발코니를 망원으로 촬영하지 말고, 주민이 식별되는 사진은 동의를 구하세요.</li><li>일부 원본 사진은 제3자 사이트에서 제공됩니다. 원본 출처 링크를 함께 표기했으며, 사이트의 정책에 따라 이미지 제공 방식이 바뀔 수 있습니다.</li></ul></section>
+<section class="section"><div class="kicker">02 / IMAGE &amp; LOCATION SOURCES</div><h2>Real places, real photographs.</h2><p class="sub">각 카드의 사진은 해당 건물의 실제 사진입니다. 새로 추가한 세 곳은 비주거 건축물이며, 콘도 단지는 포함하지 않았습니다. 비주거 건물은 외부 공개 보행로와 허용된 공개 공간에서만 촬영하세요. 원본 출처와 촬영 접근 조건은 카드별 링크에서 확인하세요.</p><div class="sources"><div class="source"><a href="https://www.edgeprop.sg/living/discover/through-lens-exploring-spatial-rhythms-new-hdb-projects" rel="noopener noreferrer" target="_blank">EdgeProp · Tampines GreenOpal ↗</a><p>신형 HDB 파사드와 공간 구성을 다룬 건축 사진 에세이.</p></div><div class="source"><a href="https://www.mcrae.photos/journal/2024/11/5/chasing-lines-and-shapes-at-63-yung-kuang-road" rel="noopener noreferrer" target="_blank">Gary McRae Photography · Yung Kuang Road photo essay ↗</a><p>Yung Kuang Road의 다이아몬드형 HDB 블록.</p></div><div class="source"><a href="https://www.homeanddecor.com.sg/property/hdb/unique-hdb-blocks-singapore" rel="noopener noreferrer" target="_blank">Home &amp; Decor · Unique HDB blocks ↗</a><p>Queensway Butterfly Block, Whampoa Banana Block, Stirling Road 등.</p></div><div class="source"><a href="https://www.roots.gov.sg/places/places-landing/Places/landmarks/tiong-bahru-heritage-trail/the-horse-shoe-block" rel="noopener noreferrer" target="_blank">National Heritage Board · Horse-Shoe Block ↗</a><p>Block 78 Moh Guan Terrace의 역사와 독특한 U자형 구조.</p></div><div class="source"><a href="https://commons.wikimedia.org/wiki/File:Shophouses_along_Tanjong_Pagar_Road.jpg" rel="noopener noreferrer" target="_blank">Wikimedia Commons · Tanjong Pagar Shophouses ↗</a><p>실제 거리 사진. 촬영자 Deoma12, CC BY-SA 4.0. 원본 페이지에서 라이선스 조건을 확인할 수 있습니다.</p></div><div class="source"><a href="https://www.aedas.com/en/project/sandcrawler/" rel="noopener noreferrer" target="_blank">Aedas · Eclipse (Sandcrawler) ↗</a><p>V자형 오피스 건물, 계단형 오버행과 공개 지상 정원.</p></div><div class="source"><a href="https://www.mcrae.photos/journal/2025/3/18/a-sunday-stroll-through-tanjong-pagar-discovering-keppel-south-central" rel="noopener noreferrer" target="_blank">Gary McRae · Keppel South Central ↗</a><p>곡선형 프레임과 유리 파사드의 현장 사진.</p></div><div class="source"><a href="https://commons.wikimedia.org/wiki/File:Singapore_Power_Building_4,_Aug_07.JPG" rel="noopener noreferrer" target="_blank">Wikimedia Commons · TripleOne Somerset ↗</a><p>역지구라트형 입면과 깊은 오버행이 보이는 실제 건물 사진.</p></div><div class="source"><a href="https://www.hardwarezone.com.sg/mobile/telco/tech-news-singtel-ericsson-and-singapore-polytechnic-charge-ahead-open-singapore-s-first-live-5g-tes/" rel="noopener noreferrer" target="_blank">HardwareZone · Ayer Rajah Telephone Exchange ↗</a><p>Singtel Tetris Building의 실제 외관 사진과 위치 맥락.</p></div></div></section>
+<footer>S/PW — Singapore Photo Walks · HDB + Shophouse + Geometry edition · Updated 28 Oct 2026 · Draft 10</footer></main>
+<script>document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b===btn));document.querySelectorAll('.card').forEach(card=>card.classList.toggle('hidden',btn.dataset.filter!=='ALL'&&card.dataset.region!==btn.dataset.filter));}));</script></body></html>
